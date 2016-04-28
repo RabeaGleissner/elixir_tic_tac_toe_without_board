@@ -12,4 +12,12 @@ defmodule UiTest do
     end)
     assert_received {:result, "4"}
   end
+
+  test "returns false when user input is invalid" do
+    assert false == Ui.valid?("n")
+  end
+
+  test "returns user input if it is valid" do
+    assert 3 == Ui.valid?("3")
+  end
 end
