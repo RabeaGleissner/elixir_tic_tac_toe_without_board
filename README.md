@@ -6,7 +6,7 @@ To run this application, first clone the repo by typing:
 
 Then navigate into the directory and type:
 
- `mix run`
+ `mix tic_tac_toe.start`
 
 To run the tests, type:
 
