@@ -5,9 +5,22 @@ defmodule Ui do
     ask_user_for_position
   end
 
+  def replay? do
+    IO.puts "Would you like to start again? (y/n)"
+    get_replay_option
+  end
+
+  defp get_replay_option do
+    input = String.strip(IO.gets "")
+    if input == "y" || input == "n" do
+      input == "y"
+    else
+      replay?
+    end
+  end
+
   defp ask_user_for_position do
-    user_input = IO.gets ""
-    input = String.strip(user_input)
+    input = String.strip(IO.gets"")
 
     if valid?(input) do
       convert_to_integer(input)
@@ -32,7 +45,7 @@ defmodule Ui do
     end
   end
 
-  def convert_to_integer(string) do
+  defp convert_to_integer(string) do
     String.to_integer(string)
   end
 
@@ -40,4 +53,3 @@ defmodule Ui do
     Integer.parse(input) != :error
   end
 end
-

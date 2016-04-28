@@ -1,7 +1,7 @@
-defmodule Mix.Tasks.TicTacToe.Start do
+defmodule Mix.Tasks.TTT.Start do
   use Mix.Task
 
   def run(_) do
-    Ui.ask_for_position
+    TicTacToe.run(Ui)
   end
 end
