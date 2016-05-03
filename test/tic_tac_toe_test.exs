@@ -8,15 +8,29 @@ defmodule TicTacToeTest do
     :ok
   end
 
+  test "plays again if user wants to replay" do
+    replay = "y\n"
+    numbers = "1\n2\n3\n4\n5\n6\n7\n8\n9\n"
+    no_replay = "n\n"
+    input = replay <> numbers <> no_replay
+    result = capture_io([input: input], fn ->
+      TicTacToe.play(10, Ui, KernelDummy)
+    end)
+    assert String.contains?(result, "See you next time")
+  end
+
   test "ends game if user doesn't want to replay" do
-    assert capture_io(fn ->
-      TicTacToe.play(10, UiStub, KernelDummy)
-    end) == "Bye\n"
+    no_replay = "n\n"
+    result = capture_io([input: no_replay], fn ->
+      TicTacToe.play(10, Ui, KernelDummy)
+    end)
+    assert String.contains?(result, "See you next time")
   end
 
   test "asks for position 3 more times when counter is at 7" do
-    assert capture_io(fn ->
+    result = capture_io(fn ->
       TicTacToe.play(7, UiStub, KernelDummy)
-    end) == "Position?\nPosition?\nPosition?\nBye\n"
+    end)
+    assert String.contains?(result, "Position?\nPosition?\nPosition?\n")
   end
 end

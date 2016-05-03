@@ -9,6 +9,5 @@ defmodule UiStub do
   end
 
   def say_bye do
-    IO.puts "Bye"
   end
 end
