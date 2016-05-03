@@ -18,7 +18,7 @@ defmodule TicTacToe do
     end
   end
 
-  def end_game(ui, kernel) do
+  defp end_game(ui, kernel) do
     ui.say_bye
     kernel.exit(:normal)
   end
