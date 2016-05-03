@@ -47,4 +47,10 @@ defmodule UiTest do
       Ui.replay?
     end) == "Would you like to start again? (y/n)\nWould you like to start again? (y/n)\n"
   end
+
+  test "prints goodbye message" do
+    assert capture_io(fn ->
+      Ui.say_bye
+    end) == "See you next time!\n"
+  end
 end

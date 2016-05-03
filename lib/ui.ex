@@ -19,6 +19,10 @@ defmodule Ui do
     end
   end
 
+  def say_bye do
+    IO.puts "See you next time!"
+  end
+
   defp ask_user_for_position do
     input = String.strip(IO.gets"")
 
