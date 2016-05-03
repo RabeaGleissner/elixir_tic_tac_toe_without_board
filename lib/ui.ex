@@ -5,6 +5,10 @@ defmodule Ui do
     ask_user_for_position
   end
 
+  def game_over do
+    IO.puts "GAME OVER\n"
+  end
+
   def replay? do
     IO.puts "Would you like to start again? (y/n)"
     get_replay_option

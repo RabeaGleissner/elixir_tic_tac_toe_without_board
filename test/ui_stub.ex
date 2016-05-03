@@ -4,6 +4,9 @@ defmodule UiStub do
     IO.puts "Position?"
   end
 
+  def game_over do
+  end
+
   def replay? do
     false
   end

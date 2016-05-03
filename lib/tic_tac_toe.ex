@@ -11,6 +11,7 @@ defmodule TicTacToe do
   end
 
   def play_again?(ui, kernel) do
+    ui.game_over
     if ui.replay? do
       play(1, ui, kernel)
     else
